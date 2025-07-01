@@ -47,12 +47,13 @@
 
 * PG-Sign=md5(请求PATH + GET参数 + POST参数 + 时间戳 + SK)
 
-POST数据分为:
-  * application/x-www-form-urlencoded: 与GET一样，对所有参数进行排序
+GET参数: 所有参数名进行排序后拼接
+POST参数:
+  * application/x-www-form-urlencoded: 与GET一样，对所有参数进行排序后拼接
+  * json: 直接拼接原JSON字符串
   * multipart/form-data: 暂不支持
-  * json: 直接链接JSON字符串
 
 ## SDK
-golang: https://github.com/travel-api/openapi-sdk-golang
-php: https://github.com/travel-api/openapi-sdk-php
+golang: https://github.com/pinguo-icc/travel-photography-open-api/golang-sdk
+php: https://github.com/pinguo-icc/travel-photography-open-api/php-sdk
 
