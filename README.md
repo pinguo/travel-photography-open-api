@@ -54,6 +54,6 @@ POST参数:
   * multipart/form-data: 暂不支持
 
 ## SDK
-* golang: https://github.com/pinguo-icc/travel-photography-open-api/tree/main/go-sdk
-* php: https://github.com/pinguo-icc/travel-photography-open-api/tree/main/php-sdk
+* golang: https://github.com/pinguo/travel-photography-open-api/tree/main/go-sdk
+* php: https://github.com/pinguo/travel-photography-open-api/tree/main/php-sdk
 
