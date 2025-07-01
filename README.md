@@ -45,7 +45,7 @@
 
 ### 接口签名算法
 
-* 接口签名算法: md5(请求PATH + GET参数 + POST参数 + 时间戳 + SK)
+* PG-Sign=md5(请求PATH + GET参数 + POST参数 + 时间戳 + SK)
 
 POST数据分为:
   * application/x-www-form-urlencoded: 与GET一样，对所有参数进行排序
