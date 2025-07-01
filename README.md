@@ -48,6 +48,7 @@
 * PG-Sign=md5(请求PATH + GET参数 + POST参数 + 时间戳 + SK)
 
 GET参数: 所有参数名进行排序后拼接
+
 POST参数:
   * application/x-www-form-urlencoded: 与GET一样，对所有参数进行排序后拼接
   * json: 直接拼接原JSON字符串
