@@ -43,11 +43,11 @@
 
 * PG-Timestamp: 当前时间戳
 * PG-AccessKey: AK(从商务处获取)
-* PG-Signature: 签名
+* PG-Sign: 签名
 
 ### 接口签名算法
 
-* PG-Signature=hash256(请求PATH + GET参数 + POST参数 + 时间戳 + SK)
+* PG-Sign=hash256(请求PATH + GET参数 + POST参数 + 时间戳 + SK)
 
 GET参数: 所有参数名进行排序后拼接
 
