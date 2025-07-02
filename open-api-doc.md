@@ -12,7 +12,7 @@
 |--------|--------|---------|
 | serverNotifyUrl | string | 服务端通知地址 |
 
-**返回示例**
+**返回数据示例**
 
 ```json
  {
@@ -30,7 +30,7 @@
 |--------|--------|---------|-----|
 | serverNotifyUrl | string | 服务端通知地址 |     |
 
-**示例数据**
+**请求数据示例**
 
 ```json
  {
@@ -53,7 +53,7 @@
 | stores.name       | string   | 店铺名称   |
 | stores.outStoreId | string   | 外部门店ID |
 
-**返回样例**
+**返回数据示例**
 
 ```json
 {
@@ -79,7 +79,7 @@
 | stores.outStoreId | string   | 否    | 外部门店ID |     |
 
 
-**请求示例**
+**请求数据示例**
 
 ```json
  {
@@ -96,7 +96,7 @@
 
 ## 订单管理
 
-订单状态枚举:
+**订单状态枚举**
 
 | 状态码           | 描述    |
 |---------------|-------|
@@ -120,7 +120,7 @@
 | consumptionPackage.photoNumber        | number | 是    | 底片数量     |     |
 | consumptionPackage.retouchPhotoNumber | number | 是    | 精修数量     |     |
 
-**请求示例**
+**请求数据示例**
 ```json
 {
   "storeId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -146,6 +146,64 @@
 | status     | string   | 订单状态   |
 | qrCode     | string   | 二维码    |
 
+**返回数据示例**
+```json
+ {
+  "orderId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "outOrderId": "4433455",
+  "storeId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "tradeNo": "345324",
+  "status": "Initializing",
+  "qrCode": "http://xxxxx"
+}
+```
+
+### 提交订单图片urls
+>**PATCH** /v1/orders/{id}/image-urls
+
+**请求参数**
+
+| 参数名         | 类型       | 是否必填 | 说明   | 默认值 |
+|-------------|----------|------|------|-----|
+| images      | object[] | 是    | 图片列表 |     |
+| images.name | string   | 否    | 图片名  |     |
+| images.url  | string   | 是    | 下载地址 |     |
+
+**请求数据示例**
+```json
+{
+  "images": [
+     {
+       "name": "name",
+       "url": "http://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+     }
+  ]
+}
+```
+
+**返回数据**
+
+| 参数名        | 类型     | 说明     |
+|------------|--------|--------|
+| orderId    | string    | 旅拍订单ID |
+| outOrderId | string    | 外部订单ID |
+| storeId    | string    | 旅拍门店ID |
+| tradeNo    | string    | 业务订单号  |
+| status     | string   | 订单状态   |
+| qrCode     | string   | 二维码    |
+
+**返回数据示例**
+```json
+ {
+  "orderId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "outOrderId": "4433455",
+  "storeId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "tradeNo": "345324",
+  "status": "Initializing",
+  "qrCode": "http://xxxxx"
+}
+```
+
 
 ### 获取订单详情
 >**GET** /v1/orders/{orderId}
@@ -161,7 +219,7 @@
 | status     | string   | 订单状态   |
 | qrCode     | string   | 二维码    |
 
-**示例数据**
+**返回数据示例**
 ```json
  {
   "orderId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
