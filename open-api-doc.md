@@ -94,6 +94,15 @@
 
 ## 订单管理
 
+订单状态枚举:
+
+| 状态码           | 描述    |
+|---------------|-------|
+| Initializing  | 准备中 |
+| Retouching    | 修图中   |
+| Retouched     | 修成完成  |
+| PhotoSelected | 用户已选片 |
+
 #### 创建订单
 >**POST** /v1/orders
 
