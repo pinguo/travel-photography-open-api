@@ -98,12 +98,12 @@
 
 **订单状态枚举**
 
-| 状态码           | 描述    |
-|---------------|-------|
-| Initializing  | 修图准备中 |
-| Retouching    | 修图中   |
-| Retouched     | 修成完成  |
-| PhotoSelected | 用户已选片 |
+| 状态码           | 描述          |
+|---------------|-------------|
+| Initializing  | 修图准备中       |
+| Retouching    | 修图中         |
+| Retouched     | 修成完成，等待用户选片 |
+| PhotoSelected | 用户选片完成      |
 
 ### 创建订单
 >**POST** /v1/orders
