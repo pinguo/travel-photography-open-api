@@ -47,7 +47,7 @@
 
 ### 接口签名算法
 
-* PG-Sign=hash256(请求PATH + GET参数 + POST参数 + 时间戳 + SK)
+* PG-Signature=hash256(请求PATH + GET参数 + POST参数 + 时间戳 + SK)
 
 GET参数: 所有参数名进行排序后拼接
 
