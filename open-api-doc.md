@@ -165,10 +165,10 @@
 ```json
  {
   "orderId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "outOrderId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "outOrderId": "4433455",
   "storeId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "tradeNo": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "status": "WAIT_PAY",
+  "tradeNo": "345324",
+  "status": "Initializing",
   "qrCode": "http://xxxxx"
 }
 ```
