@@ -12,7 +12,7 @@ class SignatureBuilder
         $this->expiredIn = intval($expiredIn);
     }
 
-    public function sign($path, $getParams = [], $postParams = [], $body = "")
+    public function sign($path, $getParams = [], $postParams = [], $body = "",$ts = "")
     {
         $params = empty($getParams) ? [] : $getParams;
         if (!empty($postParams)) {
@@ -21,12 +21,14 @@ class SignatureBuilder
             }
         }
         $finalText = $path . $this->buildFinalText($params, $body);
-        $ts = time();
+        if(empty($ts)){
+            $ts = time();
+        }
         $finalText .= $ts . $this->sk;
         return [
             "finalText" => $finalText,
             "timestamp" => $ts,
-            "sign" => hash('sha256', $data),
+            "sign" => hash('sha256', $finalText),
         ];
     }
 

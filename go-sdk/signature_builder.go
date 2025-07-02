@@ -55,16 +55,16 @@ func (s *SignatureBuilder) ValidateRequest(ctx context.Context, r *http.Request)
 	return nil
 }
 
-func (s *SignatureBuilder) SignRequest(ctx context.Context, r *http.Request) error {
+func (s *SignatureBuilder) SignRequest(ctx context.Context, r *http.Request) (*SignatureResult, error) {
 	rs, err := s.buildSignatureFromIncomeRequest(ctx, r)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	r.Header.Set("PG-Timestamp", rs.Timestamp)
 	r.Header.Set("PG-AccessKey", s.accessKey)
 	r.Header.Set("PG-Sign", rs.Sign)
-	return nil
+	return rs, nil
 }
 
 func (s *SignatureBuilder) buildSignatureFromIncomeRequest(ctx context.Context, r *http.Request) (*SignatureResult, error) {

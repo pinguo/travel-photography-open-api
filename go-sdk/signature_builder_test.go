@@ -12,10 +12,11 @@ func TestSigRequest(t *testing.T) {
 	body := strings.NewReader("a=b&d=c")
 	r, _ := http.NewRequest("POST", "https://api.open-platform.com/v1/photos/generate?data=a", body)
 
-	err := sb.SignRequest(context.Background(), r)
+	ts, err := sb.SignRequest(context.Background(), r)
 	if err != nil {
 		t.Error(err)
 	}
+	t.Log(*ts)
 	t.Log(r.Header)
 
 	err = sb.ValidateRequest(context.Background(), r)
