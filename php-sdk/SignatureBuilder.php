@@ -26,7 +26,7 @@ class SignatureBuilder
         return [
             "finalText" => $finalText,
             "timestamp" => $ts,
-            "sign" => md5($finalText),
+            "sign" => hash('sha256', $data), //md5($finalText),
         ];
     }
 

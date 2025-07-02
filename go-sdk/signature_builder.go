@@ -3,8 +3,7 @@ package go_sdk
 import (
 	"bytes"
 	"context"
-	"crypto/md5"
-	"encoding/hex"
+	"crypto/sha256"
 	"fmt"
 	"io"
 	"mime"
@@ -82,7 +81,7 @@ func (s *SignatureBuilder) buildSignatureFromIncomeRequest(ctx context.Context, 
 	ts := fmt.Sprintf("%d", time.Now().Unix())
 	path := r.URL.Path
 	finalText := fmt.Sprintf("%s%s%s%s", path, s.buildParamsSignatureText(queryParams, body), ts, s.secretKey)
-	sign := s.md5Hash(finalText)
+	sign := s.hash(finalText)
 	return &SignatureResult{
 		Sign:      sign,
 		FinalText: finalText,
@@ -91,10 +90,9 @@ func (s *SignatureBuilder) buildSignatureFromIncomeRequest(ctx context.Context, 
 }
 
 // 计算 MD5 哈希值
-func (s *SignatureBuilder) md5Hash(text string) string {
-	hash := md5.New()
-	hash.Write([]byte(text))
-	return hex.EncodeToString(hash.Sum(nil))
+func (s *SignatureBuilder) hash(text string) string {
+	hash := sha256.Sum256([]byte(text))
+	return fmt.Sprintf("SHA-256: %x\n", hash)
 }
 
 func (s *SignatureBuilder) buildParamsSignatureText(params map[string]string, body string) string {
