@@ -112,7 +112,15 @@
 **请求示例**
 ```json
 {
-  "storeId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  "storeId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "outOrderId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "customer": {
+    "mobile": "15900000000"
+  },
+  "consumptionPackage": {
+    "photoNumber": 1,
+    "retouchPhotoNumber": 1
+  }
 }
 ```
 
