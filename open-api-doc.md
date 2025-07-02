@@ -50,6 +50,7 @@
 |-------------------|----------|--------|
 | stores            | object[] | 门店列表   |
 | stores.id         | string   | 旅拍门店ID |
+| stores.name       | string   | 店铺名称   |
 | stores.outStoreId | string   | 外部门店ID |
 
 **返回样例**
@@ -59,7 +60,8 @@
   "stores": [
      {
        "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-       "outStoreId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+       "outStoreId": "3333333",
+       "name": "name"
      }
   ]
 }
@@ -98,7 +100,7 @@
 
 | 状态码           | 描述    |
 |---------------|-------|
-| Initializing  | 准备中 |
+| Initializing  | 修图准备中 |
 | Retouching    | 修图中   |
 | Retouched     | 修成完成  |
 | PhotoSelected | 用户已选片 |
