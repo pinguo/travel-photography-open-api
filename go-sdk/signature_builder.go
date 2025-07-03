@@ -92,7 +92,7 @@ func (s *SignatureBuilder) buildSignatureFromIncomeRequest(ctx context.Context, 
 // 计算 MD5 哈希值
 func (s *SignatureBuilder) hash(text string) string {
 	hash := sha256.Sum256([]byte(text))
-	return fmt.Sprintf("SHA-256: %x\n", hash)
+	return fmt.Sprintf("SHA-256: %x", hash)
 }
 
 func (s *SignatureBuilder) buildParamsSignatureText(params map[string]string, body string) string {
