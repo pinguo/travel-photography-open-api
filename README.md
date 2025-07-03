@@ -57,6 +57,11 @@ POST参数:
   * json: 直接拼接原JSON字符串
   * multipart/form-data: 暂不支持
 
+
+## 通知数据文档
+
+* https://github.com/pinguo/travel-photography-open-api/blob/main/open-api-server-notify.md
+
 ## SDK
 * golang: https://github.com/pinguo/travel-photography-open-api-sdk-go
 * php: https://github.com/pinguo/travel-photography-open-api/tree/main/php-sdk
