@@ -110,24 +110,28 @@
 
 **请求参数**
 
-| 参数名                                   | 类型     | 是否必填 | 说明       | 默认值 |
-|---------------------------------------|--------|------|----------|-----|
-| storeId                               | string | 是    | 旅拍门店ID     |     |
-| outOrderId                            | string | 是    | 外部系统订单ID |     |
-| customer                              | object | 是    | 客户信息     |     |
-| customer.mobile                       | string | 是    | 客户手机号    |     |
-| consumptionPackage                    | object | 是    | 套餐信息     |     |
-| consumptionPackage.photoNumber        | number | 是    | 底片数量     |     |
-| consumptionPackage.retouchPhotoNumber | number | 是    | 精修数量     |     |
+| 参数名                                   | 类型       | 是否必填 | 说明       | 默认值 |
+|---------------------------------------|----------|------|----------|-----|
+| storeId                               | string   | 是    | 旅拍门店ID   |     |
+| outOrderId                            | string   | 是    | 外部系统订单ID |     |
+| customers                             | object[] | 是    | 客户信息     |     |
+| customers.mobile                      | string   | 是    | 客户手机号    |     |
+| customers.age                         | string   | 否    | 年龄       |     |
+| consumptionPackage                    | object   | 是    | 套餐信息     |     |
+| consumptionPackage.photoNumber        | number   | 是    | 底片数量     |     |
+| consumptionPackage.retouchPhotoNumber | number   | 是    | 精修数量     |     |
 
 **请求数据示例**
 ```json
 {
   "storeId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "outOrderId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "customer": {
-    "mobile": "15900000000"
-  },
+  "customers": [
+    {
+      "mobile": "15900000000",
+      "age": "18"
+    }
+  ],
   "consumptionPackage": {
     "photoNumber": 1,
     "retouchPhotoNumber": 1
