@@ -61,6 +61,6 @@ POST参数:
 
 
 ## SDK
-* golang: https://github.com/pinguo/travel-photography-open-api-sdk-go
+* golang: https://github.com/pinguo/open-api-sdk-go
 * php: https://github.com/pinguo/travel-photography-open-api/tree/main/php-sdk
 
