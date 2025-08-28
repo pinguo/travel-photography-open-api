@@ -86,7 +86,7 @@
 | purchaseItems | array | 订单已购买内容列表 |
 | purchaseItems.photoId | string | 已购图片id |
 | purchaseItems.photoName | string | 已购图片名称 |
-| purchaseItems.photoUrl | string | 已购图片url |
+| purchaseItems.photoUrl | string | 已购图片原图url |
 | purchaseItems.photoRetouchUrl | string | 已购图片精修url |
 
 **通知数据示例**
