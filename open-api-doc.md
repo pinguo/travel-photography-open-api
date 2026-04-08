@@ -2,8 +2,6 @@
 
 ## 环境域名
 
-- **dev 环境**：https://trips-open-api-dev.pinguo.cn
-- **qa 环境**：https://trips-open-api-qa.pinguo.cn
 - **prod 环境**：https://trips-open-api.pinguo.cn
 
 ## 帐户管理
